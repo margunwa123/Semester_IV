@@ -1,0 +1,124 @@
+IF2240 PRAKTIKUM-1
+Tanggal	:
+Nama	:
+NIM	:
+------------------------------------------------------------
+
+1. select name from country where region = "North America";
++---------------------------+
+| name                      |
++---------------------------+
+| Bermuda                   |
+| Canada                    |
+| Greenland                 |
+| Saint Pierre and Miquelon |
+| United States             |
++---------------------------+
+5 rows in set (0.00 sec)
+
+2. select name from country where population < 100000;
++----------------------------------------------+
+| name                                         |
++----------------------------------------------+
+| Anguilla                                     |
+| Andorra                                      |
+| American Samoa                               |
+| Antarctica                                   |
+| French Southern territories                  |
+| Antigua and Barbuda                          |
+| Bermuda                                      |
+| Bouvet Island                                |
+| Cocos (Keeling) Islands                      |
+| Cook Islands                                 |
+| Christmas Island                             |
+| Cayman Islands                               |
+| Dominica                                     |
+| Falkland Islands                             |
+| Faroe Islands                                |
+| Gibraltar                                    |
+| Grenada                                      |
+| Greenland                                    |
+| Heard Island and McDonald Islands            |
+| British Indian Ocean Territory               |
+| Kiribati                                     |
+| Saint Kitts and Nevis                        |
+| Liechtenstein                                |
+| Monaco                                       |
+| Marshall Islands                             |
+| Northern Mariana Islands                     |
+| Montserrat                                   |
+| Norfolk Island                               |
+| Niue                                         |
+| Nauru                                        |
+| Pitcairn                                     |
+| Palau                                        |
+| South Georgia and the South Sandwich Islands |
+| Saint Helena                                 |
+| Svalbard and Jan Mayen                       |
+| San Marino                                   |
+| Saint Pierre and Miquelon                    |
+| Seychelles                                   |
+| Turks and Caicos Islands                     |
+| Tokelau                                      |
+| Tonga                                        |
+| Tuvalu                                       |
+| United States Minor Outlying Islands         |
+| Holy See (Vatican City State)                |
+| Virgin Islands, British                      |
+| Virgin Islands, U.S.                         |
+| Wallis and Futuna                            |
++----------------------------------------------+
+47 rows in set (0.00 sec)
+
+3. select Name from country where IndepYear = (select Min(IndepYear) from country);
++-------+-----------+
+| Name  | IndepYear |
++-------+-----------+
+| China |     -1523 |
++-------+-----------+
+1 row in set (0.00 sec)
+
+4. select HeadOfState from country where country.Name = "Indonesia";
++-------------------+
+| HeadOfState       |
++-------------------+
+| Abdurrahman Wahid |
++-------------------+
+1 row in set (0.00 sec)
+
+5. select name from city where district = "Kalimantan Barat";
++-----------+
+| name      |
++-----------+
+| Pontianak |
++-----------+
+1 row in set (0.01 sec)
+
+6. select count(*) from country where continent = "Africa";
++----------+
+| count(*) |
++----------+
+|       58 |
++----------+
+1 row in set (0.00 sec)
+
+7. select count(distinct District) from city where CountryCode = 'IDN';
++--------------------------+
+| count(distinct District) |
++--------------------------+
+|                       26 |
++--------------------------+
+1 row in set (0.06 sec)
+
+8. select count(*) from country where continent not like "%America%";
++----------+
+| count(*) |
++----------+
+|      188 |
++----------+
+1 row in set (0.00 sec)
+
+9. select ci.name,co.continent from city ci join country co on ci.countrycode = co.code;
+4079 rows in set (0.01 sec)
+
+10. alter table country drop column gnpold;

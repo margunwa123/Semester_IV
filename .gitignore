@@ -1,0 +1,9 @@
+*.exe
+*.class
+*.mkv
+*.mp4
+*.dll
+*.zip
+*.pdf
+.vscode
+.idea
